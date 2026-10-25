@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AILand haqida — sun'iy intellekt vositalari katalogi</title>
+<meta name="description" content="AILand — sun'iy intellekt vositalarini bir joyga jamlagan bepul katalog. 600+ AI vosita, 10+ yo'nalish, o'zbek, rus va ingliz tillarida qisqa tavsif.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="AILand haqida">
+<meta property="og:description" content="AILand — sun'iy intellekt vositalarini bir joyga jamlagan bepul katalog. Kerakli AI'ni toping va u haqida o'zbek tilida o'qing.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22ag%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%232747e8%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%238b5cf6%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20rx%3D%2211%22%20fill%3D%22url(%23ag)%22%2F%3E%3Cpath%20d%3D%22M11.5%2030.5%2020%2010l8.5%2020.5%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224.2%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M14.6%2024.6q2.7-2.3%205.4%200t5.4%200%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20class%3D%22spark%22%20d%3D%22M31%204.2Q31.75%208.25%2035.8%209Q31.75%209.75%2031%2013.8Q30.25%209.75%2026.2%209Q30.25%208.25%2031%204.2Z%22%20fill%3D%22%23ffc93c%22%2F%3E%3C%2Fsvg%3E">
+<script>
+  try {
+    var th = localStorage.getItem('ailand_theme');
+    if (th && th.replace(/"/g, '') === 'dark') document.documentElement.dataset.theme = 'dark';
+  } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300..800&family=Unbounded:wght@600..800&display=swap" rel="stylesheet">
+<style>
+
+/* ============ RANGLAR VA O'LCHAMLAR (neo-brutalizm) ============ */
+:root {
+  --paper: #ffffff;
+  --mist: #f1f2f7;
+  --line: #000000;
+  --edge: #000000;
+  --ink: #000000;
+  --ink-2: #3b3d4a;
+  --ink-3: #6b6e7d;
+  --sea: #2747e8;
+  --sea-ink: #ffffff;
+  --sun: #ffc93c;
+  --heart: #e5484d;
+  --tile: #ffffff;
+  --bw: 2px;
+  --sh: 4px 4px 0 var(--edge);
+  --sh-sm: 2px 2px 0 var(--edge);
+  --shadow: var(--sh);
+  --font: "Geologica", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --display: "Unbounded", "Geologica", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+:root[data-theme="dark"] {
+  --paper: #181920;
+  --mist: #2a2c38;
+  --line: #d8d9e2;
+  --edge: #d8d9e2;
+  --ink: #f5f5f7;
+  --ink-2: #c6c8d4;
+  --ink-3: #9295a6;
+  --sea: #7b8fff;
+  --sea-ink: #000000;
+  --tile: #2a2c38;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 88px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: 0; padding: 0; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--sea); outline-offset: 3px; border-radius: 8px; }
+.wrap { max-width: 1260px; margin: 0 auto; padding: 0 24px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+svg { display: block; }
+.ico { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+/* Bosiladigan elementlar: bosganda soyasiga "cho'kadi" */
+.press { transition: transform .12s ease, box-shadow .12s ease, background-color .2s, color .2s; }
+.press:active { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--edge); }
+
+/* ============ HEADER ============ */
+.top { position: sticky; top: 0; z-index: 30; background: var(--paper); border-bottom: var(--bw) solid var(--edge); }
+.top .wrap { height: 68px; display: flex; align-items: center; gap: 18px; }
+.brand { display: flex; align-items: center; gap: 11px; text-decoration: none; flex: none; }
+.brand .mark { width: 38px; height: 38px; color: var(--ink); filter: drop-shadow(3px 3px 0 var(--edge)); }
+.brand .mark .spark { transform-origin: 31px 9px; transform-box: view-box; }
+.brand:hover .mark .spark { animation: twinkle .9s ease; }
+@keyframes twinkle { 0% { transform: scale(1) rotate(0); } 40% { transform: scale(1.35) rotate(45deg); } 100% { transform: scale(1) rotate(90deg); } }
+.wordmark { font-family: var(--display); font-weight: 800; font-size: 21px; letter-spacing: -.02em; line-height: 1; }
+.top-search { flex: 1; max-width: 460px; margin-left: 10px; opacity: 0; transform: translateY(-6px); pointer-events: none; transition: opacity .2s, transform .2s; }
+.top.show-search .top-search { opacity: 1; transform: none; pointer-events: auto; }
+.top-tools { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.langs { display: flex; border: var(--bw) solid var(--edge); border-radius: 12px; overflow: hidden; background: var(--paper); box-shadow: var(--sh-sm); }
+.langs button { font-size: 13px; font-weight: 700; padding: 7px 11px; color: var(--ink-2); transition: background .2s, color .2s; }
+.langs button + button { border-left: var(--bw) solid var(--edge); }
+.langs button:hover { background: var(--mist); color: var(--ink); }
+.langs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.icon-btn { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; color: var(--ink); background: var(--paper); border: var(--bw) solid var(--edge); box-shadow: var(--sh-sm); transition: transform .12s, box-shadow .12s, background .2s; }
+.icon-btn:hover { background: var(--sun); color: #000; }
+.icon-btn:active { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--edge); }
+.only-mobile { display: none; }
+
+/* ============ QIDIRUV ============ */
+.search { position: relative; display: flex; align-items: center; gap: 10px; height: 60px; padding: 0 8px 0 18px; border: var(--bw) solid var(--edge); border-radius: 16px; background: var(--paper); box-shadow: 5px 5px 0 var(--edge); transition: box-shadow .18s; }
+.search:focus-within { box-shadow: 5px 5px 0 var(--sea); }
+.search .ico { color: var(--ink); width: 20px; height: 20px; }
+.search input { flex: 1; min-width: 0; height: 100%; border: 0; outline: 0; background: transparent; font-size: 17px; -webkit-appearance: none; appearance: none; }
+.search input::-webkit-search-cancel-button, .search input::-webkit-search-decoration { -webkit-appearance: none; display: none; }
+.search input::placeholder { color: var(--ink-3); }
+.search .clear { width: 36px; height: 36px; border-radius: 10px; display: none; place-items: center; color: var(--ink); }
+.search .clear:hover { background: var(--mist); }
+.search.has-text .clear { display: grid; }
+.search kbd { font: 700 12px var(--font); color: var(--ink); border: 1.5px solid var(--edge); border-radius: 7px; padding: 2px 8px; margin-right: 8px; box-shadow: 2px 2px 0 var(--edge); }
+.search.has-text kbd { display: none; }
+.search.small { height: 44px; border-radius: 12px; box-shadow: 3px 3px 0 var(--edge); padding-left: 14px; }
+.search.small:focus-within { box-shadow: 3px 3px 0 var(--sea); }
+.search.small input { font-size: 15px; }
+
+/* ============ HERO ============ */
+.hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px; align-items: center; padding-top: 58px; padding-bottom: 46px; }
+.hero-copy { container-type: inline-size; }
+.hero h1 { margin: 0; font-family: var(--display); font-size: clamp(2.1rem, 10cqi, 3.9rem); line-height: 1.04; letter-spacing: -.035em; font-weight: 800; text-wrap: balance; }
+.hero .lead { margin: 20px 0 30px; font-size: 18px; line-height: 1.55; color: var(--ink-2); max-width: 30em; text-wrap: pretty; }
+.quick { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; padding: 0 4px 4px 0; }
+.quick::-webkit-scrollbar { display: none; }
+.quick button { flex: none; white-space: nowrap; font-size: 14px; font-weight: 600; padding: 6px 13px; border-radius: 999px; border: var(--bw) solid var(--edge); color: var(--ink); background: var(--paper); box-shadow: var(--sh-sm); transition: transform .12s, box-shadow .12s, background .2s; }
+.quick button:hover { background: var(--sun); color: #000; }
+.quick button:active { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--edge); }
+
+/* ============ AI LOGOTIPLARI DEVORI ============ */
+.wall-wrap { position: relative; min-width: 0; padding: 22px 0 16px; border: var(--bw) solid var(--edge); border-radius: 24px; background: #2747e8; background-image: radial-gradient(rgba(255, 255, 255, .16) 1.2px, transparent 1.6px); background-size: 20px 20px; box-shadow: 8px 8px 0 var(--edge); overflow: hidden; }
+.wall { position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 6px; padding: 4px 0 8px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
+.wall-row { display: flex; width: max-content; animation: rowIn .9s cubic-bezier(.2, .8, .2, 1) both, slide var(--dur, 80s) linear infinite; animation-delay: var(--in, 0s), 0s; }
+.wall-row.rev { animation-direction: normal, reverse; }
+.wall:hover .wall-row { animation-play-state: running, paused; }
+@keyframes slide { to { transform: translateX(-50%); } }
+@keyframes rowIn { from { opacity: 0; translate: 0 18px; } }
+.wl { flex: none; width: 104px; margin-right: 8px; display: flex; flex-direction: column; align-items: center; gap: 9px; padding: 10px 6px 8px; border-radius: 16px; }
+.wl .logo { width: 64px; height: 64px; border-radius: 17px; box-shadow: 4px 4px 0 var(--edge); transition: transform .15s, box-shadow .15s; }
+.wl .logo svg { width: 33px; height: 33px; }
+.wl:hover .logo, .wl:focus-visible .logo { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--edge); }
+.wl:active .logo { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--edge); }
+.wl:focus-visible { outline-color: #fff; }
+.wl-n { max-width: 100%; font-size: 13px; font-weight: 600; color: #fff; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+/* ============ KATALOG ============ */
+.catalog { display: grid; grid-template-columns: 256px minmax(0, 1fr); gap: 44px; padding-top: 34px; padding-bottom: 80px; border-top: var(--bw) solid var(--edge); }
+.rail { position: sticky; top: 90px; align-self: start; max-height: calc(100vh - 104px); overflow: auto; scrollbar-width: thin; padding: 0 6px 6px 0; }
+.side { padding: 10px; border: var(--bw) solid var(--edge); border-radius: 18px; background: var(--paper); box-shadow: var(--sh); }
+.side h3 { margin: 6px 10px 8px; font-size: 13px; font-weight: 700; color: var(--ink-3); }
+.side .sep { border: 0; border-top: var(--bw) solid var(--edge); margin: 8px 4px; }
+.regions { display: flex; flex-direction: column; gap: 3px; }
+.region { display: flex; align-items: center; gap: 10px; width: 100%; padding: 5px 8px 5px 6px; border-radius: 11px; font-size: 14.5px; color: var(--ink-2); text-align: left; transition: background .15s, color .15s; }
+.region:hover { background: var(--mist); color: var(--ink); }
+.region .ri { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; flex: none; color: #000; border: 1.5px solid var(--edge); background: color-mix(in srgb, var(--c) 30%, #fff); transition: background .2s, color .2s; }
+.region .ri .ico { width: 16px; height: 16px; }
+.region .rn { flex: 1; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.region .n { font-size: 12.5px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.region[aria-pressed="true"] { background: var(--ink); color: var(--paper); font-weight: 700; }
+.region[aria-pressed="true"] .ri { background: var(--c); color: #fff; }
+.region[aria-pressed="true"] .n { color: color-mix(in srgb, var(--paper) 70%, transparent); }
+
+/* Narx va tartib — kartalar ustidagi bitta qator */
+.toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 28px; }
+.toolbar .lbl { font-size: 14px; font-weight: 600; color: var(--ink-3); margin-right: 12px; }
+.toolbar .left { display: flex; align-items: center; min-width: 0; }
+.seg { display: inline-flex; border: var(--bw) solid var(--edge); border-radius: 12px; background: var(--paper); box-shadow: 3px 3px 0 var(--edge); min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.seg::-webkit-scrollbar { display: none; }
+.seg button { flex: none; padding: 8px 15px; font-size: 14px; font-weight: 600; color: var(--ink-2); white-space: nowrap; transition: background .2s, color .2s; }
+.seg button + button { border-left: var(--bw) solid var(--edge); }
+.seg button:hover { background: var(--mist); color: var(--ink); }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.sortbox { position: relative; flex: none; display: flex; align-items: center; gap: 8px; height: 42px; padding: 0 12px; border: var(--bw) solid var(--edge); border-radius: 12px; background: var(--paper); box-shadow: 3px 3px 0 var(--edge); color: var(--ink); transition: background .2s; }
+.sortbox:hover { background: var(--mist); }
+.sortbox .ico { width: 16px; height: 16px; }
+.sortbox select { border: 0; background: transparent; font-size: 14px; font-weight: 600; color: var(--ink); outline: none; cursor: pointer; }
+.sortbox select option { background: var(--paper); color: var(--ink); }
+
+.res-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+.res-head h2 { margin: 0; display: flex; align-items: center; gap: 12px; font-family: var(--display); font-size: 28px; line-height: 1.15; letter-spacing: -.025em; font-weight: 800; }
+.res-head h2 .sw { width: 18px; height: 18px; border-radius: 5px; border: var(--bw) solid var(--edge); background: var(--c); flex: none; }
+.res-head p { margin: 8px 0 0; color: var(--ink-2); max-width: 46em; }
+.res-head .count { color: var(--ink-3); font-size: 14.5px; font-weight: 600; white-space: nowrap; }
+.chip-reset { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--sea); font-weight: 700; white-space: nowrap; }
+.chip-reset:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.group { margin-bottom: 50px; }
+.group-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; padding-bottom: 12px; margin-bottom: 20px; border-bottom: var(--bw) solid var(--edge); }
+.group-head h3 { margin: 0; display: flex; align-items: center; gap: 11px; font-family: var(--display); font-size: 19px; line-height: 1.2; letter-spacing: -.015em; font-weight: 700; }
+.group-head h3 .sw { width: 15px; height: 15px; border-radius: 4px; border: var(--bw) solid var(--edge); background: var(--c); flex: none; }
+.group-head p { margin: 5px 0 0; font-size: 14.5px; color: var(--ink-3); }
+.see-all { flex: none; display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: var(--ink); padding: 7px 12px; border-radius: 11px; border: var(--bw) solid var(--edge); background: var(--paper); box-shadow: var(--sh-sm); transition: transform .12s, box-shadow .12s, background .2s, color .2s; }
+.see-all:hover { background: var(--c); color: #fff; }
+.see-all:active { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--edge); }
+.see-all .n { color: var(--ink-3); font-weight: 600; }
+.see-all:hover .n { color: rgba(255, 255, 255, .85); }
+
+/* ============ AI KARTASI ============ */
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.tile { position: relative; display: flex; flex-direction: column; gap: 12px; padding: 16px; border: var(--bw) solid var(--edge); border-radius: 16px; background: var(--tile); box-shadow: var(--sh); transition: transform .15s ease, box-shadow .15s ease; }
+.tile:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--edge); }
+.tile:has(.tile-open:active) { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--edge); }
+.tile.new { animation: tileIn .45s cubic-bezier(.2, .8, .2, 1) backwards; animation-delay: var(--d, 0s); }
+@keyframes tileIn { from { opacity: 0; translate: 0 10px; } }
+.tile-top { display: flex; align-items: center; gap: 12px; padding-right: 36px; min-width: 0; }
+.tile-name { display: block; font-weight: 700; font-size: 16.5px; line-height: 1.25; letter-spacing: -.01em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tile-dom { display: block; font-size: 12.5px; color: var(--ink-3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tile-desc { margin: 0; font-size: 14px; line-height: 1.5; color: var(--ink-2); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 3em; }
+.tile-foot { display: flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 12px; border-top: 1.5px dashed color-mix(in srgb, var(--edge) 35%, transparent); font-size: 12.5px; min-width: 0; }
+:root[data-theme="dark"] .tile-foot { border-top-color: rgba(255, 255, 255, .14); }
+.tag { display: inline-flex; align-items: center; gap: 7px; color: var(--ink-2); font-weight: 500; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.tag::before { content: ""; width: 9px; height: 9px; border-radius: 2px; border: 1.5px solid var(--edge); background: var(--c); flex: none; }
+.price { margin-left: auto; flex: none; font-weight: 700; padding: 2px 9px; border-radius: 999px; border: 1.5px solid var(--edge); color: #000; }
+.p-F { background: #a8efc7; }
+.p-M { background: #ffe27a; }
+.p-P { background: #d9cbff; }
+.star { color: #f2a900; font-size: 13px; margin-left: 4px; }
+.tile-open { position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+.tile-open:focus-visible { outline-offset: 3px; border-radius: 16px; }
+.fav { position: absolute; top: 12px; right: 12px; z-index: 2; width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; color: var(--ink-3); border: var(--bw) solid transparent; transition: background .2s, color .2s, border-color .2s; }
+.fav:hover { background: var(--mist); color: var(--heart); border-color: var(--edge); }
+.fav.on { color: var(--heart); }
+.fav.on svg { fill: currentColor; animation: pop .4s cubic-bezier(.3, 1.6, .5, 1); }
+@keyframes pop { 0% { transform: scale(.6); } 100% { transform: scale(1); } }
+
+/* Logotip qutisi (doim oq, logotiplar yaxshi ko'rinishi uchun) */
+.logo { position: relative; flex: none; width: 46px; height: 46px; border-radius: 13px; background: #fff; border: var(--bw) solid #000; display: grid; place-items: center; overflow: hidden; }
+.logo svg { width: 25px; height: 25px; }
+.logo img { width: 28px; height: 28px; border-radius: 6px; object-fit: contain; }
+.logo .mono { display: none; position: absolute; inset: 0; place-items: center; font-weight: 800; font-size: 16px; letter-spacing: -.03em; color: color-mix(in srgb, var(--c) 75%, #000); background: color-mix(in srgb, var(--c) 18%, #fff); }
+.logo.failed .mono { display: grid; }
+.logo.failed img { display: none; }
+
+/* ============ BO'SH HOLAT, TUGMALAR ============ */
+.empty { text-align: center; padding: 70px 20px; color: var(--ink-2); }
+.empty svg { margin: 0 auto 16px; width: 120px; height: 80px; }
+.empty p { max-width: 28em; margin: 0 auto 18px; font-size: 16.5px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 46px; padding: 0 18px; border-radius: 12px; font-weight: 700; font-size: 15px; border: var(--bw) solid var(--edge); background: var(--paper); color: var(--ink); box-shadow: 3px 3px 0 var(--edge); transition: transform .12s, box-shadow .12s, background .2s; text-decoration: none; }
+.btn:hover { background: var(--mist); }
+.btn:active { transform: translate(3px, 3px); box-shadow: 0 0 0 var(--edge); }
+.btn.primary { background: var(--sea); color: var(--sea-ink); }
+.btn.primary:hover { background: color-mix(in srgb, var(--sea) 88%, #000); }
+.more { display: flex; justify-content: center; margin-top: 34px; }
+.to-top { position: fixed; right: 18px; bottom: 18px; z-index: 20; width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; background: var(--sun); color: #000; border: var(--bw) solid var(--edge); box-shadow: 3px 3px 0 var(--edge); opacity: 0; transform: translateY(10px); pointer-events: none; transition: opacity .25s, transform .25s, box-shadow .12s; }
+.to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+.to-top.show:active { transform: translate(3px, 3px); box-shadow: 0 0 0 var(--edge); }
+
+/* ============ AI HAQIDA OYNA ============ */
+dialog.sheet { padding: 0; border: 0; border-left: 3px solid var(--edge); margin: 0 0 0 auto; width: min(470px, 100vw); max-width: none; height: 100dvh; max-height: none; background: var(--paper); color: var(--ink); transform: translateX(104%); transition: transform .4s cubic-bezier(.2, .8, .2, 1); }
+dialog.sheet.open { transform: none; }
+dialog.sheet::backdrop { background: rgba(0, 0, 0, 0); transition: background .3s; }
+dialog.sheet.open::backdrop { background: rgba(0, 0, 0, .45); }
+.sheet-in { height: 100%; overflow-y: auto; overscroll-behavior: contain; padding: 22px 26px 30px; display: flex; flex-direction: column; }
+.sheet-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
+.sheet-bar .crumbs { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--ink-2); font-weight: 600; }
+.sheet-bar .crumbs .sw { width: 11px; height: 11px; border-radius: 3px; border: 1.5px solid var(--edge); background: var(--c); }
+.sheet-hero { display: flex; align-items: center; gap: 18px; }
+.sheet-hero .logo { width: 76px; height: 76px; border-radius: 20px; box-shadow: 4px 4px 0 var(--edge); }
+.sheet-hero .logo svg { width: 40px; height: 40px; }
+.sheet-hero .logo img { width: 44px; height: 44px; border-radius: 10px; }
+.sheet-hero .logo .mono { font-size: 26px; }
+.sheet h2 { margin: 0; font-family: var(--display); font-size: 25px; line-height: 1.15; letter-spacing: -.025em; font-weight: 800; overflow-wrap: anywhere; }
+.sheet .dom { display: inline-flex; align-items: center; gap: 5px; margin-top: 6px; font-size: 14.5px; color: var(--ink-3); text-decoration: none; }
+.sheet .dom:hover { color: var(--sea); text-decoration: underline; text-underline-offset: 3px; }
+.sheet .facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 18px; }
+.fact { display: inline-flex; align-items: center; gap: 7px; font-size: 13.5px; font-weight: 600; padding: 5px 11px; border-radius: 999px; border: 1.5px solid var(--edge); background: var(--paper); color: var(--ink); }
+.facts .price { margin: 0; padding: 5px 11px; font-size: 13.5px; }
+.fact .sw { width: 9px; height: 9px; border-radius: 2px; border: 1.5px solid var(--edge); background: var(--c); }
+.sheet .about { margin: 0 0 20px; font-size: 17px; line-height: 1.6; text-wrap: pretty; }
+.purpose { padding: 14px 16px; border-radius: 14px; background: color-mix(in srgb, var(--c) 16%, var(--paper)); border: var(--bw) solid var(--edge); box-shadow: 3px 3px 0 var(--edge); margin-bottom: 24px; }
+.purpose b { display: block; font-size: 13.5px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
+.purpose span { font-size: 14.5px; color: var(--ink-2); }
+.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.actions .primary { grid-column: 1 / -1; height: 54px; font-size: 16px; border-radius: 14px; }
+.actions .btn.on { color: var(--heart); }
+.actions .btn.on svg { fill: currentColor; }
+.similar { margin-top: 32px; }
+.similar h3 { margin: 0 0 10px; font-family: var(--display); font-size: 15px; font-weight: 700; }
+.sim { display: flex; align-items: center; gap: 12px; padding: 8px 10px; margin: 0 -10px; width: calc(100% + 20px); border-radius: 12px; text-align: left; transition: background .15s; }
+.sim:hover { background: var(--mist); }
+.sim .logo { width: 40px; height: 40px; border-radius: 11px; }
+.sim .logo svg { width: 21px; height: 21px; }
+.sim .logo img { width: 24px; height: 24px; }
+.sim .t { min-width: 0; flex: 1; }
+.sim .t b { display: block; font-weight: 700; font-size: 15px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.sim .t span { display: block; font-size: 13px; color: var(--ink-3); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.sheet-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 28px; }
+.sheet-nav .btn { flex: 1; }
+.sheet-nav .btn[disabled] { opacity: .4; pointer-events: none; }
+
+/* ============ FOOTER ============ */
+.foot { border-top: var(--bw) solid var(--edge); padding: 28px 0 40px; color: var(--ink-3); font-size: 13.5px; }
+.foot .wrap { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; justify-content: space-between; }
+.foot .brand .mark { width: 30px; height: 30px; filter: drop-shadow(2px 2px 0 var(--edge)); }
+.foot .brand .wordmark { font-size: 17px; color: var(--ink); }
+.foot p { margin: 0; max-width: 54em; }
+
+
+/* ============ SAYT HAQIDA HAVOLASI ============ */
+.nav-link { font-size: 14.5px; font-weight: 700; padding: 8px 12px; border-radius: 10px; text-decoration: none; color: var(--ink); white-space: nowrap; transition: background .2s; }
+.nav-link:hover { background: var(--mist); }
+.foot-link { margin-right: auto; font-weight: 700; color: var(--ink); text-underline-offset: 3px; }
+
+/* ============ QANDAY FOYDALANILADI ============ */
+.how { padding-bottom: 54px; }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: var(--bw) solid var(--edge); border-radius: 18px; background: var(--paper); box-shadow: var(--sh); overflow: hidden; }
+.steps li { display: flex; gap: 14px; align-items: flex-start; padding: 18px 20px; min-width: 0; }
+.steps li + li { border-left: var(--bw) solid var(--edge); }
+.steps .num { flex: none; width: 34px; height: 34px; border-radius: 10px; border: var(--bw) solid var(--edge); display: grid; place-items: center; font-family: var(--display); font-weight: 800; font-size: 15px; background: var(--sun); color: #000; }
+.steps b { display: block; font-size: 16px; font-weight: 700; line-height: 1.3; margin: 5px 0 4px; }
+.steps .t { display: block; font-size: 14px; line-height: 1.5; color: var(--ink-2); }
+.how-more { display: inline-flex; align-items: center; gap: 4px; margin-top: 16px; font-size: 14.5px; font-weight: 700; color: var(--sea); text-decoration: none; }
+.how-more:hover { text-decoration: underline; text-underline-offset: 3px; }
+.how-more .ico { width: 16px; height: 16px; }
+
+/* ============ YO'NALISHLAR TO'RI (telefonda bosh ko'rinish) ============ */
+.cat-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.cat-card { display: flex; align-items: center; gap: 10px; min-width: 0; padding: 11px 10px; border: var(--bw) solid var(--edge); border-radius: 14px; background: var(--tile); box-shadow: 3px 3px 0 var(--edge); text-align: left; transition: transform .12s, box-shadow .12s; }
+.cat-card:active { transform: translate(3px, 3px); box-shadow: 0 0 0 var(--edge); }
+.cat-card .ri { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; flex: none; color: #000; border: 1.5px solid var(--edge); background: color-mix(in srgb, var(--c) 30%, #fff); }
+.cat-card .ri .ico { width: 18px; height: 18px; }
+.cat-card .cx { min-width: 0; }
+.cat-card .cn { display: block; font-size: 14px; font-weight: 700; line-height: 1.2; }
+.cat-card .cc { display: block; margin-top: 2px; font-size: 12.5px; color: var(--ink-3); }
+.back { display: none; }
+
+/* ============ MOSLASHUVCHAN (MOBIL) ============ */
+@media (max-width: 1180px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 980px) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 30px; padding-top: 30px; padding-bottom: 44px; }
+  html { scroll-padding-top: 68px; }
+  .catalog { grid-template-columns: minmax(0, 1fr); gap: 18px; padding-top: 0; border-top: 0; }
+  .home-view .catalog { border-top: var(--bw) solid var(--edge); }
+  .rail { position: sticky; top: 68px; z-index: 10; max-height: none; overflow: visible; margin: 0 -24px; padding: 10px 0 6px; background: var(--paper); border-bottom: var(--bw) solid var(--edge); }
+  .side { padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+  .side h3, .side .sep { display: none; }
+  .regions { flex-direction: row; overflow-x: auto; gap: 8px; padding: 0 24px 5px; scrollbar-width: none; }
+  .regions::-webkit-scrollbar { display: none; }
+  .region { width: auto; flex: none; padding: 3px 12px 3px 3px; border: var(--bw) solid var(--edge); border-radius: 999px; font-size: 14px; background: var(--paper); box-shadow: var(--sh-sm); }
+  .region .ri { width: 26px; height: 26px; border-radius: 999px; }
+  .region .ri .ico { width: 14px; height: 14px; }
+  .region .rn { overflow: visible; }
+  .toolbar { margin-bottom: 20px; }
+  .toolbar .lbl { display: none; }
+  .toolbar .left { flex: 1; }
+  .seg { flex: 1; }
+  .seg button { flex: 1; padding: 8px 8px; font-size: 13.5px; }
+  .sortbox { width: 42px; padding: 0; justify-content: center; }
+  .sortbox select { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; }
+  .top-search { display: none; }
+  .only-mobile { display: grid; }
+  .res-head h2 { font-size: 23px; }
+}
+@media (max-width: 640px) {
+  .wrap { padding-left: 16px; padding-right: 16px; }
+  .rail { margin: 0 -16px; top: 64px; }
+  .regions { padding: 0 16px 5px; }
+  .top .wrap { height: 64px; gap: 10px; }
+  .top-tools { gap: 8px; }
+  .wordmark { font-size: 18px; }
+  .brand { gap: 9px; }
+  .brand .mark { width: 34px; height: 34px; }
+  .langs button { padding: 6px 8px; font-size: 12.5px; }
+  .icon-btn { width: 38px; height: 38px; }
+  .hero .lead { font-size: 16.5px; margin: 14px 0 22px; }
+  .search { height: 56px; box-shadow: 4px 4px 0 var(--edge); }
+  .search:focus-within { box-shadow: 4px 4px 0 var(--sea); }
+  .search kbd { display: none; }
+  .quick { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 16px -16px 0; padding: 0 16px 6px; }
+  .wall-wrap { margin-right: 6px; border-radius: 20px; box-shadow: 6px 6px 0 var(--edge); padding: 16px 0 10px; }
+  .wl { width: 86px; margin-right: 4px; padding: 10px 4px 8px; }
+  .wl .logo { width: 54px; height: 54px; border-radius: 15px; box-shadow: 3px 3px 0 var(--edge); }
+  .wl .logo svg { width: 28px; height: 28px; }
+  .wl-n { font-size: 12px; }
+  .wall-row:nth-child(4) { display: none; }
+  .grid { grid-template-columns: 1fr; }
+  .group .grid { grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 84%; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 16px; margin: 0 -16px; padding: 4px 16px 12px; scrollbar-width: none; }
+  .group .grid::-webkit-scrollbar { display: none; }
+  .group .tile { scroll-snap-align: start; }
+  .group-head { flex-wrap: wrap; }
+  .group-head p { display: none; }
+  .res-head { flex-direction: column; align-items: flex-start; }
+
+  /* Telefon: ortiqcha narsalarsiz, ixcham ko'rinish */
+  .nav-link { display: none; }
+  .hero { padding-bottom: 30px; gap: 24px; }
+  .wall-wrap { padding: 12px 0 6px; border-radius: 18px; box-shadow: 5px 5px 0 var(--edge); }
+  .wl { width: 78px; margin-right: 2px; padding: 8px 4px 6px; gap: 7px; }
+  .wl .logo { width: 48px; height: 48px; border-radius: 14px; box-shadow: 3px 3px 0 var(--edge); }
+  .wl .logo svg { width: 25px; height: 25px; }
+  .wl .logo img { width: 26px; height: 26px; }
+  .wl-n { font-size: 11.5px; }
+  .wall-row:nth-child(n+3) { display: none; }
+  .how { padding-bottom: 34px; }
+  .steps { grid-template-columns: minmax(0, 1fr); border-radius: 16px; }
+  .steps li { padding: 13px 14px; gap: 12px; }
+  .steps li + li { border-left: 0; border-top: var(--bw) solid var(--edge); }
+  .steps .num { width: 30px; height: 30px; font-size: 13.5px; }
+  .steps b { font-size: 15px; margin: 3px 0 2px; }
+  .steps .t { font-size: 13.5px; }
+  html { scroll-padding-top: 64px; }
+  .home-view .rail, .home-view .toolbar { display: none; }
+  .res-head .chip-reset { display: none; }
+  .home-view .catalog { padding-top: 28px; }
+  .back { display: inline-flex; align-items: center; gap: 4px; margin: 2px 0 14px; padding: 6px 13px 6px 8px; font-size: 14px; font-weight: 700; border: var(--bw) solid var(--edge); border-radius: 999px; background: var(--paper); box-shadow: var(--sh-sm); }
+  .back .ico { width: 16px; height: 16px; }
+  .back:active { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--edge); }
+  .res-head { margin-bottom: 18px; }
+  .res-head h2 { font-size: 21px; }
+  .grid { gap: 14px; }
+  .tile { padding: 13px 14px; gap: 9px; border-radius: 14px; }
+  .tile-top { gap: 11px; padding-right: 34px; }
+  .tile .logo { width: 42px; height: 42px; border-radius: 12px; }
+  .tile .logo svg { width: 22px; height: 22px; }
+  .tile .logo img { width: 25px; height: 25px; }
+  .tile-name { font-size: 15.5px; }
+  .tile-desc { font-size: 13.5px; min-height: 0; }
+  .tile-foot { padding-top: 0; border-top: 0; }
+  .fav { top: 9px; right: 9px; }
+  .foot .wrap { gap: 12px 20px; }
+  dialog.sheet { margin: auto 0 0 0; width: 100vw; height: auto; max-height: 92dvh; border-left: 0; border-top: 3px solid var(--edge); border-radius: 22px 22px 0 0; transform: translateY(104%); }
+  .sheet-in { max-height: 92dvh; padding: 18px 20px 26px; }
+  .sheet h2 { font-size: 22px; }
+  .to-top { right: 14px; bottom: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .pulse { display: none; }
+}
+
+/* ============ SAYT HAQIDA SAHIFASI ============ */
+.ab-hero { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 56px; align-items: center; padding-top: 62px; padding-bottom: 64px; }
+.ab-hero h1 { margin: 0; font-family: var(--display); font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.05; letter-spacing: -.035em; font-weight: 800; }
+.ab-hero .lead { margin: 20px 0 30px; font-size: 18.5px; line-height: 1.6; color: var(--ink-2); max-width: 34em; text-wrap: pretty; }
+.ab-hero .btn.primary { height: 54px; padding: 0 24px; font-size: 16px; border-radius: 14px; }
+.sample { position: relative; padding: 30px 26px 22px; border: var(--bw) solid var(--edge); border-radius: 24px; background: #2747e8; background-image: radial-gradient(rgba(255, 255, 255, .16) 1.2px, transparent 1.6px); background-size: 20px 20px; box-shadow: 8px 8px 0 var(--edge); }
+.sample .tile { pointer-events: none; }
+.mk { display: inline-grid; place-items: center; flex: none; width: 22px; height: 22px; border-radius: 999px; border: 1.5px solid #000; background: var(--sun); color: #000; font-size: 12px; font-weight: 800; line-height: 1; }
+.sample .tile .mk { position: absolute; }
+.sample .mk-1 { left: -11px; top: 22px; }
+.sample .mk-2 { left: -11px; top: 82px; }
+.sample .mk-3 { right: 64px; bottom: -11px; }
+.legend { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 9px; }
+.legend li { display: flex; align-items: center; gap: 10px; color: #fff; font-size: 14.5px; font-weight: 600; }
+.sec { padding-top: 56px; padding-bottom: 56px; border-top: var(--bw) solid var(--edge); }
+.sec h2 { margin: 0 0 12px; font-family: var(--display); font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.15; letter-spacing: -.03em; font-weight: 800; }
+.sec .intro { margin: 0 0 30px; max-width: 46em; font-size: 17px; line-height: 1.6; color: var(--ink-2); text-wrap: pretty; }
+.cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.cards.five { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.card { padding: 18px; border: var(--bw) solid var(--edge); border-radius: 16px; background: var(--tile); box-shadow: var(--sh); }
+.card .ci { width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center; margin-bottom: 14px; color: #000; border: 1.5px solid var(--edge); background: color-mix(in srgb, var(--c) 30%, #fff); }
+.card .ci .ico { width: 19px; height: 19px; }
+.card b { display: block; font-size: 16.5px; line-height: 1.3; font-weight: 700; margin-bottom: 6px; }
+.card span { display: block; font-size: 14.5px; line-height: 1.55; color: var(--ink-2); }
+.sec .steps { margin-top: 4px; }
+.note { padding-top: 40px; padding-bottom: 64px; border-top: var(--bw) solid var(--edge); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+.note p { margin: 0; max-width: 44em; color: var(--ink-2); font-size: 15px; line-height: 1.6; }
+.note p + p { margin-top: 8px; }
+.note .btn.primary { height: 52px; padding: 0 22px; }
+@media (max-width: 1100px) { .cards, .cards.five { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 980px) {
+  .ab-hero { grid-template-columns: minmax(0, 1fr); gap: 34px; padding-top: 34px; padding-bottom: 46px; }
+}
+@media (max-width: 640px) {
+  .ab-hero { padding-top: 26px; }
+  .ab-hero .lead { font-size: 16.5px; margin: 14px 0 22px; }
+  .ab-hero .btn.primary { width: 100%; }
+  .sample { padding: 22px 18px 18px; margin-right: 6px; border-radius: 20px; box-shadow: 6px 6px 0 var(--edge); }
+  .sec { padding-top: 38px; padding-bottom: 40px; }
+  .sec .intro { font-size: 16px; margin-bottom: 22px; }
+  .cards, .cards.five { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .card { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 14px; padding: 14px; }
+  .card .ci { grid-row: span 2; margin: 0; width: 38px; height: 38px; }
+  .card b { margin: 0 0 3px; font-size: 15.5px; }
+  .card span { font-size: 14px; }
+  .note { padding-top: 30px; padding-bottom: 44px; }
+  .note .btn.primary { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><linearGradient id="ail-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2747e8"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19.5 12.6 12 20l-7.5-7.4A4.9 4.9 0 0 1 12 6.1a4.9 4.9 0 0 1 7.5 6.5Z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="i-lang" viewBox="0 0 24 24"><path d="M4 5h9M8.5 3v2M6 5c.6 3.4 2.8 6.3 6 8M11 5c-.8 3.6-3.4 6.7-7 8.5M13 21l4-9 4 9M14.4 18h5.2"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8Z"/><circle cx="8" cy="8" r="1.5"/></symbol>
+  <symbol id="c-all" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"></rect><rect width="7" height="7" x="14" y="3" rx="1"></rect><rect width="7" height="7" x="14" y="14" rx="1"></rect><rect width="7" height="7" x="3" y="14" rx="1"></rect></symbol>
+  <symbol id="c-chat" viewBox="0 0 24 24"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"></path><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"></path></symbol>
+  <symbol id="c-writing" viewBox="0 0 24 24"><path d="M12 20h9"></path><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"></path></symbol>
+  <symbol id="c-image" viewBox="0 0 24 24"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72"></path><path d="m14 7 3 3"></path><path d="M5 6v4"></path><path d="M19 14v4"></path><path d="M10 2v2"></path><path d="M7 8H3"></path><path d="M21 16h-4"></path><path d="M11 3H9"></path></symbol>
+  <symbol id="c-photo" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path></symbol>
+  <symbol id="c-design" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path></symbol>
+  <symbol id="c-video" viewBox="0 0 24 24"><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"></path><path d="m6.2 5.3 3.1 3.9"></path><path d="m12.4 3.4 3.1 4"></path><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"></path></symbol>
+  <symbol id="c-audio" viewBox="0 0 24 24"><path d="M2 10v3"></path><path d="M6 6v11"></path><path d="M10 3v18"></path><path d="M14 8v7"></path><path d="M18 5v13"></path><path d="M22 10v3"></path></symbol>
+  <symbol id="c-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></symbol>
+  <symbol id="c-productivity" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></symbol>
+  <symbol id="c-business" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></symbol>
+  <symbol id="c-education" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></symbol>
+  <symbol id="c-research" viewBox="0 0 24 24"><path d="M6 18h8"></path><path d="M3 22h18"></path><path d="M14 22a7 7 0 1 0 0-14h-1"></path><path d="M9 14h2"></path><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"></path><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"></path></symbol>
+  <symbol id="c-automation" viewBox="0 0 24 24"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></symbol>
+</svg>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="AILand">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="url(#ail-g)"/><path d="M11.5 30.5 20 10l8.5 20.5" fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.6 24.6q2.7-2.3 5.4 0t5.4 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path class="spark" d="M31 4.2Q31.75 8.25 35.8 9Q31.75 9.75 31 13.8Q30.25 9.75 26.2 9Q30.25 8.25 31 4.2Z" fill="#ffc93c"/></svg>
+      <span class="wordmark">AILand</span>
+    </a>
+    <div class="top-tools">
+      <a class="nav-link" href="index.html" data-i18n="catalog">Katalog</a>
+      <div class="langs" role="group" aria-label="Til / Язык / Language">
+        <button type="button" data-lang="uz">UZ</button>
+        <button type="button" data-lang="ru">RU</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <button class="icon-btn" type="button" data-act="theme" data-i18n-aria="theme">
+        <svg class="ico" id="themeIco"><use href="#i-moon"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="wrap ab-hero">
+    <div>
+      <h1 data-i18n="h1">AILand nima?</h1>
+      <p class="lead" data-i18n="lead"></p>
+      <a class="btn primary" href="index.html"><span data-i18n="open"></span><svg class="ico"><use href="#i-right"/></svg></a>
+    </div>
+    <div class="sample" aria-hidden="true">
+      <article class="tile" style="--c:#3e63dd">
+        <span class="mk mk-1">1</span><span class="mk mk-2">2</span><span class="mk mk-3">3</span>
+        <div class="tile-top"><span class="logo"><svg viewBox="0 0 24 24" fill="#000000" aria-hidden="true"><path d="M20.5624 10.1875C20.8124 9.5 20.8749 8.8125 20.8124 8.125C20.7499 7.4375 20.4999 6.75 20.1874 6.125C19.6249 5.1875 18.8124 4.4375 17.8749 4C16.8749 3.5625 15.8124 3.4375 14.7499 3.6875C14.2499 3.1875 13.6874 2.75 13.0624 2.4375C12.4374 2.125 11.6874 2 10.9999 2C9.9374 2 8.8749 2.3125 7.9999 2.9375C7.1249 3.5625 6.4999 4.4375 6.1874 5.4375C5.4374 5.625 4.8124 5.9375 4.1874 6.3125C3.6249 6.75 3.1874 7.3125 2.8124 7.875C2.24991 8.8125 2.06241 9.875 2.18741 10.9375C2.31241 12 2.7499 13 3.4374 13.8125C3.1874 14.5 3.1249 15.1875 3.1874 15.875C3.2499 16.5625 3.4999 17.25 3.8124 17.875C4.3749 18.8125 5.1874 19.5625 6.1249 20C7.1249 20.4375 8.1874 20.5625 9.2499 20.3125C9.7499 20.8125 10.3124 21.25 10.9374 21.5625C11.5624 21.875 12.3124 22 12.9999 22C14.0624 22 15.1249 21.6875 15.9999 21.0625C16.8749 20.4375 17.4999 19.5625 17.8124 18.5625C18.4999 18.4375 19.1874 18.125 19.7499 17.6875C20.3124 17.25 20.8124 16.75 21.1249 16.125C21.6874 15.1875 21.8749 14.125 21.7499 13.0625C21.6249 12 21.2499 11 20.5624 10.1875ZM13.0624 20.6875C12.0624 20.6875 11.3124 20.375 10.6249 19.8125C10.6249 19.8125 10.6874 19.75 10.7499 19.75L14.7499 17.4375C14.8749 17.375 14.9374 17.3125 14.9999 17.1875C15.0624 17.0625 15.0624 17 15.0624 16.875V11.25L16.7499 12.25V16.875C16.8124 19.0625 15.0624 20.6875 13.0624 20.6875ZM4.9999 17.25C4.5624 16.5 4.3749 15.625 4.5624 14.75C4.5624 14.75 4.6249 14.8125 4.6874 14.8125L8.6874 17.125C8.8124 17.1875 8.8749 17.1875 8.9999 17.1875C9.1249 17.1875 9.2499 17.1875 9.3124 17.125L14.1874 14.3125V16.25L10.1249 18.625C9.2499 19.125 8.2499 19.25 7.3124 19C6.3124 18.75 5.4999 18.125 4.9999 17.25ZM3.9374 8.5625C4.3749 7.8125 5.0624 7.25 5.8749 6.9375V7.0625V11.6875C5.8749 11.8125 5.8749 11.9375 5.9374 12C5.9999 12.125 6.0624 12.1875 6.1874 12.25L11.0624 15.0625L9.3749 16.0625L5.3749 13.75C4.4999 13.25 3.8749 12.4375 3.6249 11.5C3.3749 10.5625 3.4374 9.4375 3.9374 8.5625ZM17.7499 11.75L12.8749 8.9375L14.5624 7.9375L18.5624 10.25C19.1874 10.625 19.6874 11.125 19.9999 11.75C20.3124 12.375 20.4999 13.0625 20.4374 13.8125C20.3749 14.5 20.1249 15.1875 19.6874 15.75C19.2499 16.3125 18.6874 16.75 17.9999 17V12.25C17.9999 12.125 17.9999 12 17.9374 11.9375C17.9374 11.9375 17.8749 11.8125 17.7499 11.75ZM19.4374 9.25C19.4374 9.25 19.3749 9.1875 19.3124 9.1875L15.3124 6.875C15.1874 6.8125 15.1249 6.8125 14.9999 6.8125C14.8749 6.8125 14.7499 6.8125 14.6874 6.875L9.8124 9.6875V7.75L13.8749 5.375C14.4999 5 15.1874 4.875 15.9374 4.875C16.6249 4.875 17.3124 5.125 17.9374 5.5625C18.4999 6 18.9999 6.5625 19.2499 7.1875C19.4999 7.8125 19.5624 8.5625 19.4374 9.25ZM8.9374 12.75L7.2499 11.75V7.0625C7.2499 6.375 7.4374 5.625 7.8124 5.0625C8.1874 4.4375 8.7499 4 9.3749 3.6875C9.9999 3.375 10.7499 3.25 11.4374 3.375C12.1249 3.4375 12.8124 3.75 13.3749 4.1875C13.3749 4.1875 13.3124 4.25 13.2499 4.25L9.2499 6.5625C9.1249 6.625 9.0624 6.6875 8.9999 6.8125C8.9374 6.9375 8.9374 7 8.9374 7.125V12.75ZM9.8124 10.75L11.9999 9.5L14.1874 10.75V13.25L11.9999 14.5L9.8124 13.25V10.75Z"></path></svg></span><div style="min-width:0"><span class="tile-name">ChatGPT<span class="star">★</span></span><span class="tile-dom">chatgpt.com</span></div></div>
+        <p class="tile-desc" id="sampleDesc"></p>
+        <div class="tile-foot"><span class="tag" id="sampleTag"></span><span class="price p-M" id="samplePrice">Freemium</span></div>
+      </article>
+      <ol class="legend">
+        <li><span class="mk">1</span><span data-i18n="lg1"></span></li>
+        <li><span class="mk">2</span><span data-i18n="lg2"></span></li>
+        <li><span class="mk">3</span><span data-i18n="lg3"></span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <h2 data-i18n="whyT"></h2>
+    <p class="intro" data-i18n="whyP"></p>
+    <div class="cards">
+      <div class="card" style="--c:#2b8ceb"><span class="ci"><svg class="ico"><use href="#i-lang"/></svg></span><b data-i18n="f1t"></b><span data-i18n="f1d"></span></div>
+      <div class="card" style="--c:#e5a000"><span class="ci"><svg class="ico"><use href="#i-tag"/></svg></span><b data-i18n="f2t"></b><span data-i18n="f2d"></span></div>
+      <div class="card" style="--c:#12a594"><span class="ci"><svg class="ico"><use href="#c-all"/></svg></span><b data-i18n="f3t"></b><span data-i18n="f3d"></span></div>
+      <div class="card" style="--c:#e54666"><span class="ci"><svg class="ico"><use href="#i-heart"/></svg></span><b data-i18n="f4t"></b><span data-i18n="f4d"></span></div>
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <h2 data-i18n="whoT"></h2>
+    <p class="intro" data-i18n="whoP"></p>
+    <div class="cards five">
+      <div class="card" style="--c:#2b8ceb"><span class="ci"><svg class="ico"><use href="#c-education"/></svg></span><b data-i18n="w1t"></b><span data-i18n="w1d"></span></div>
+      <div class="card" style="--c:#8e4ec6"><span class="ci"><svg class="ico"><use href="#c-writing"/></svg></span><b data-i18n="w2t"></b><span data-i18n="w2d"></span></div>
+      <div class="card" style="--c:#f76b15"><span class="ci"><svg class="ico"><use href="#c-design"/></svg></span><b data-i18n="w3t"></b><span data-i18n="w3d"></span></div>
+      <div class="card" style="--c:#12a594"><span class="ci"><svg class="ico"><use href="#c-code"/></svg></span><b data-i18n="w4t"></b><span data-i18n="w4d"></span></div>
+      <div class="card" style="--c:#5f9f2a"><span class="ci"><svg class="ico"><use href="#c-business"/></svg></span><b data-i18n="w5t"></b><span data-i18n="w5d"></span></div>
+    </div>
+  </section>
+
+  <section class="wrap sec">
+    <h2 data-i18n="howT"></h2>
+    <ol class="steps">
+      <li><span class="num">1</span><div><b data-i18n="s1t"></b><span class="t" data-i18n="s1d"></span></div></li>
+      <li><span class="num">2</span><div><b data-i18n="s2t"></b><span class="t" data-i18n="s2d"></span></div></li>
+      <li><span class="num">3</span><div><b data-i18n="s3t"></b><span class="t" data-i18n="s3d"></span></div></li>
+    </ol>
+  </section>
+
+  <section class="wrap note">
+    <div>
+      <p data-i18n="note"></p>
+      <p data-i18n="author"></p>
+    </div>
+    <a class="btn primary" href="index.html"><span data-i18n="open2"></span><svg class="ico"><use href="#i-right"/></svg></a>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="AILand"><svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="url(#ail-g)"/><path d="M11.5 30.5 20 10l8.5 20.5" fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.6 24.6q2.7-2.3 5.4 0t5.4 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path class="spark" d="M31 4.2Q31.75 8.25 35.8 9Q31.75 9.75 31 13.8Q30.25 9.75 26.2 9Q30.25 8.25 31 4.2Z" fill="#ffc93c"/></svg><span class="wordmark">AILand</span></a>
+    <a class="foot-link" href="index.html" data-i18n="catalog">Katalog</a>
+    <p data-i18n="foot"></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var SAMPLE = {"info":["OpenAI'ning eng mashhur chat-yordamchisi. Savollarga javob beradi, matn va kod yozadi, rasm yaratadi, fayl va suratlarni tahlil qiladi.","Самый популярный чат-ассистент от OpenAI. Отвечает на вопросы, пишет тексты и код, создаёт изображения, анализирует файлы и фото.","OpenAI's flagship chat assistant. Answers questions, writes text and code, generates images and analyzes files and photos."],"tag":["Universal yordamchi","Универсальный ассистент","General assistant"]};
+  var LANGS = ['uz', 'ru', 'en'];
+  var T = {
+    uz: {
+      title: "AILand haqida — sun'iy intellekt vositalari katalogi",
+      catalog: "Katalog", theme: "Kun yoki tun rejimi",
+      h1: "AILand nima?",
+      lead: "AILand — sun'iy intellekt vositalarini bir joyga jamlagan bepul katalog. Bu yerda 600+ AI vosita 10+ yo'nalishga ajratilgan va har biri haqida o'zbek, rus va ingliz tillarida qisqa ma'lumot bor.",
+      open: "Katalogni ochish", open2: "Katalogga o'tish",
+      lg1: "Vosita nomi va sayti", lg2: "O'zbek tilidagi qisqa tavsif", lg3: "Narxi: bepul, freemium yoki pullik",
+      price: "Freemium",
+      whyT: "Nega AILand kerak?",
+      whyP: "AI vositalar juda ko'p va ularning aksariyati ingliz tilida. Qaysi biri nima qilishini, qaysi biri bepulligini bilish uchun ko'p vaqt ketadi. AILand ularni yo'nalishlarga ajratib, sodda tilda tushuntirib beradi.",
+      f1t: "O'zbek tilida", f1d: "Har bir vosita nima qilishi qisqa va sodda yozilgan. Rus va ingliz tillari ham bor.",
+      f2t: "Narxi oldindan ma'lum", f2d: "Bepul, freemium yoki pullik ekani kartaning o'zida ko'rsatilgan.",
+      f3t: "Yo'nalishlar bo'yicha", f3d: "Chatbotlar, rasm, video, ovoz, dasturlash, ta'lim va boshqa yo'nalishlar.",
+      f4t: "Bepul va ro'yxatsiz", f4d: "Ro'yxatdan o'tish shart emas. Yoqqan vositalarni yurakcha bilan saqlab qo'yasiz.",
+      whoT: "Kimlar uchun?",
+      whoP: "AI bilan ishlashni endi boshlayotgan yoki o'z ishiga mos vositani qidirayotgan har bir kishi uchun.",
+      w1t: "Talabalar va o'quvchilar", w1d: "Referat, taqdimot, tarjima va mavzuni tushunib olish uchun.",
+      w2t: "O'qituvchilar", w2d: "Dars materiallari, testlar va topshiriqlar tayyorlash uchun.",
+      w3t: "Dizaynerlar va SMM", w3d: "Rasm, logotip, video va ijtimoiy tarmoq postlari uchun.",
+      w4t: "Dasturchilar", w4d: "Kod yozish, xatolarni topish va hujjatlashtirish uchun.",
+      w5t: "Tadbirkorlar", w5d: "Reklama, mijozlar bilan ishlash va ishni avtomatlashtirish uchun.",
+      howT: "Qanday foydalaniladi?",
+      s1t: "Vazifani yozing", s1d: "Masalan: rasm fonini o'chirish, taqdimot yoki tarjima.",
+      s2t: "Mos AI'ni tanlang", s2d: "Har bir kartada qisqa tavsif va narxi bor: bepul, freemium yoki pullik.",
+      s3t: "Saytiga o'ting", s3d: "Kartani bosing, batafsil o'qing va bir bosishda vosita saytini oching.",
+      note: "Narx va imkoniyatlar vaqt o'tishi bilan o'zgaradi, aniq ma'lumotni vositaning saytida tekshiring. AILand vositalarni sotmaydi va ularga aloqador emas.",
+      author: "Loyihani Angren Universiteti talabasi Erkinova Madina yaratgan.",
+      foot: "Logotiplar egalariga tegishli; ikonkalar Simple Icons va Remix Icon to'plamlaridan."
+    },
+    ru: {
+      title: "Об AILand — каталог инструментов искусственного интеллекта",
+      catalog: "Каталог", theme: "Светлая или тёмная тема",
+      h1: "Что такое AILand?",
+      lead: "AILand — бесплатный каталог, который собрал инструменты искусственного интеллекта в одном месте. Здесь 600+ ИИ-инструментов в 10+ направлениях, и о каждом есть краткая информация на узбекском, русском и английском.",
+      open: "Открыть каталог", open2: "Перейти в каталог",
+      lg1: "Название и сайт инструмента", lg2: "Краткое описание на вашем языке", lg3: "Цена: бесплатно, freemium или платно",
+      price: "Freemium",
+      whyT: "Зачем нужен AILand?",
+      whyP: "ИИ-инструментов очень много, и большинство из них на английском. Чтобы понять, что умеет каждый и какой из них бесплатный, уходит много времени. AILand разделяет их по направлениям и объясняет простым языком.",
+      f1t: "На родном языке", f1d: "Что делает каждый инструмент, написано коротко и просто. Есть узбекский, русский и английский.",
+      f2t: "Цена известна заранее", f2d: "Бесплатно, freemium или платно — видно прямо на карточке.",
+      f3t: "По направлениям", f3d: "Чат-боты, изображения, видео, голос, программирование, обучение и другие.",
+      f4t: "Бесплатно и без регистрации", f4d: "Регистрация не нужна. Понравившиеся инструменты можно сохранить сердечком.",
+      whoT: "Для кого?",
+      whoP: "Для всех, кто только начинает работать с ИИ или ищет инструмент под свою задачу.",
+      w1t: "Студенты и школьники", w1d: "Для рефератов, презентаций, переводов и разбора темы.",
+      w2t: "Преподаватели", w2d: "Для подготовки материалов к урокам, тестов и заданий.",
+      w3t: "Дизайнеры и SMM", w3d: "Для изображений, логотипов, видео и постов в соцсетях.",
+      w4t: "Программисты", w4d: "Для написания кода, поиска ошибок и документации.",
+      w5t: "Предприниматели", w5d: "Для рекламы, работы с клиентами и автоматизации.",
+      howT: "Как пользоваться?",
+      s1t: "Напишите задачу", s1d: "Например: удалить фон, сделать презентацию или перевести текст.",
+      s2t: "Выберите ИИ", s2d: "На каждой карточке есть краткое описание и цена: бесплатно, freemium или платно.",
+      s3t: "Перейдите на сайт", s3d: "Откройте карточку, прочитайте подробности и перейдите на сайт инструмента.",
+      note: "Цены и возможности со временем меняются, уточняйте на сайте инструмента. AILand не продаёт инструменты и не связан с ними.",
+      author: "Проект создала студентка Ангренского университета Эркинова Мадина.",
+      foot: "Логотипы принадлежат их владельцам; иконки из наборов Simple Icons и Remix Icon."
+    },
+    en: {
+      title: "About AILand — a directory of AI tools",
+      catalog: "Directory", theme: "Light or dark mode",
+      h1: "What is AILand?",
+      lead: "AILand is a free directory that brings AI tools together in one place. It lists 600+ AI tools across 10+ categories, each with a short description in Uzbek, Russian and English.",
+      open: "Open the directory", open2: "Go to the directory",
+      lg1: "Tool name and website", lg2: "A short description in your language", lg3: "Price: free, freemium or paid",
+      price: "Freemium",
+      whyT: "Why AILand?",
+      whyP: "There are a huge number of AI tools, and most of them are in English. Working out what each one does and which ones are free takes a lot of time. AILand sorts them into categories and explains them in plain language.",
+      f1t: "In your language", f1d: "What each tool does is written short and simple, in Uzbek, Russian and English.",
+      f2t: "Price up front", f2d: "Free, freemium or paid is shown right on the card.",
+      f3t: "Sorted by category", f3d: "Chatbots, images, video, voice, coding, education and more.",
+      f4t: "Free, no sign-up", f4d: "No account needed. Save the tools you like with the heart button.",
+      whoT: "Who is it for?",
+      whoP: "Anyone who is just getting started with AI or looking for the right tool for a job.",
+      w1t: "Students", w1d: "For essays, slides, translation and getting to grips with a topic.",
+      w2t: "Teachers", w2d: "For lesson materials, quizzes and assignments.",
+      w3t: "Designers and SMM", w3d: "For images, logos, video and social media posts.",
+      w4t: "Developers", w4d: "For writing code, finding bugs and documentation.",
+      w5t: "Business owners", w5d: "For ads, customer support and automating work.",
+      howT: "How does it work?",
+      s1t: "Describe your task", s1d: "For example: remove a background, make slides or translate text.",
+      s2t: "Pick a tool", s2d: "Every card shows a short description and the price: free, freemium or paid.",
+      s3t: "Open the website", s3d: "Tap a card to read more, then go to the tool's website in one click.",
+      note: "Prices and features change over time, so check each tool's website. AILand doesn't sell these tools and isn't affiliated with them.",
+      author: "AILand was created by Madina Erkinova, a student at Angren University.",
+      foot: "Logos belong to their owners; icons come from Simple Icons and Remix Icon."
+    }
+  };
+  function get(k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } }
+  function set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  var lang = get('ailand_lang', 'uz'); if (LANGS.indexOf(lang) < 0) lang = 'uz';
+
+  function apply() {
+    var t = T[lang], i = LANGS.indexOf(lang);
+    document.documentElement.lang = lang;
+    document.title = t.title;
+    Array.prototype.forEach.call(document.querySelectorAll('[data-i18n]'), function (el) { el.textContent = t[el.getAttribute('data-i18n')]; });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-i18n-aria]'), function (el) { el.setAttribute('aria-label', t[el.getAttribute('data-i18n-aria')]); });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-lang]'), function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang); });
+    document.getElementById('sampleDesc').textContent = SAMPLE.info[i];
+    document.getElementById('sampleTag').textContent = SAMPLE.tag[i];
+  }
+  function setTheme(dark) {
+    if (dark) document.documentElement.dataset.theme = 'dark'; else delete document.documentElement.dataset.theme;
+    set('ailand_theme', dark ? 'dark' : 'light');
+    document.querySelector('#themeIco use').setAttribute('href', dark ? '#i-sun' : '#i-moon');
+  }
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-lang],[data-act]');
+    if (!el) return;
+    if (el.hasAttribute('data-lang')) { lang = el.getAttribute('data-lang'); set('ailand_lang', lang); apply(); }
+    else if (el.getAttribute('data-act') === 'theme') setTheme(document.documentElement.dataset.theme !== 'dark');
+  });
+  document.querySelector('#themeIco use').setAttribute('href', document.documentElement.dataset.theme === 'dark' ? '#i-sun' : '#i-moon');
+  apply();
+})();
+</script>
+</body>
+</html>

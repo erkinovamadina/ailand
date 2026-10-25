@@ -3,13 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AILand — 666 ta AI vosita katalogi</title>
-<meta name="description" content="AILand — 13 yo'nalishdagi 666 ta sun'iy intellekt vositasi katalogi. Har bir AI haqida o'zbek, rus va ingliz tillarida qisqacha ma'lumot.">
+<title>AILand — 600+ AI vosita katalogi</title>
+<meta name="description" content="AILand — 10+ yo'nalishdagi 600+ sun'iy intellekt vositasi katalogi. Har bir AI haqida o'zbek, rus va ingliz tillarida qisqacha ma'lumot.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#ffffff">
-<meta property="og:title" content="AILand — 666 ta AI vosita katalogi">
-<meta property="og:description" content="666 ta AI vosita, 13 ta yo'nalish. Kerakli AI'ni toping va u haqida bir bosishda o'qing.">
+<meta property="og:title" content="AILand — 600+ AI vosita katalogi">
+<meta property="og:description" content="Vazifangizni yozing va mos AI vositani toping: o'zbek tilida qisqa tavsif, narxi va saytiga havola.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22ag%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%232747e8%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%238b5cf6%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20rx%3D%2211%22%20fill%3D%22url(%23ag)%22%2F%3E%3Cpath%20d%3D%22M11.5%2030.5%2020%2010l8.5%2020.5%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%224.2%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M14.6%2024.6q2.7-2.3%205.4%200t5.4%200%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20class%3D%22spark%22%20d%3D%22M31%204.2Q31.75%208.25%2035.8%209Q31.75%209.75%2031%2013.8Q30.25%209.75%2026.2%209Q30.25%208.25%2031%204.2Z%22%20fill%3D%22%23ffc93c%22%2F%3E%3C%2Fsvg%3E">
 <script>
   // Sukut bo'yicha oq fon. Tun rejimi faqat foydalanuvchi tanlasa yoqiladi.
@@ -110,7 +114,7 @@ svg { display: block; }
 .search.small input { font-size: 15px; }
 
 /* ============ HERO ============ */
-.hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px; align-items: center; padding-top: 58px; padding-bottom: 60px; }
+.hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px; align-items: center; padding-top: 58px; padding-bottom: 46px; }
 .hero-copy { container-type: inline-size; }
 .hero h1 { margin: 0; font-family: var(--display); font-size: clamp(2.1rem, 10cqi, 3.9rem); line-height: 1.04; letter-spacing: -.035em; font-weight: 800; text-wrap: balance; }
 .hero .lead { margin: 20px 0 30px; font-size: 18px; line-height: 1.55; color: var(--ink-2); max-width: 30em; text-wrap: pretty; }
@@ -289,11 +293,42 @@ dialog.sheet.open::backdrop { background: rgba(0, 0, 0, .45); }
 .foot .brand .wordmark { font-size: 17px; color: var(--ink); }
 .foot p { margin: 0; max-width: 54em; }
 
+
+/* ============ SAYT HAQIDA HAVOLASI ============ */
+.nav-link { font-size: 14.5px; font-weight: 700; padding: 8px 12px; border-radius: 10px; text-decoration: none; color: var(--ink); white-space: nowrap; transition: background .2s; }
+.nav-link:hover { background: var(--mist); }
+.foot-link { margin-right: auto; font-weight: 700; color: var(--ink); text-underline-offset: 3px; }
+
+/* ============ QANDAY FOYDALANILADI ============ */
+.how { padding-bottom: 54px; }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: var(--bw) solid var(--edge); border-radius: 18px; background: var(--paper); box-shadow: var(--sh); overflow: hidden; }
+.steps li { display: flex; gap: 14px; align-items: flex-start; padding: 18px 20px; min-width: 0; }
+.steps li + li { border-left: var(--bw) solid var(--edge); }
+.steps .num { flex: none; width: 34px; height: 34px; border-radius: 10px; border: var(--bw) solid var(--edge); display: grid; place-items: center; font-family: var(--display); font-weight: 800; font-size: 15px; background: var(--sun); color: #000; }
+.steps b { display: block; font-size: 16px; font-weight: 700; line-height: 1.3; margin: 5px 0 4px; }
+.steps .t { display: block; font-size: 14px; line-height: 1.5; color: var(--ink-2); }
+.how-more { display: inline-flex; align-items: center; gap: 4px; margin-top: 16px; font-size: 14.5px; font-weight: 700; color: var(--sea); text-decoration: none; }
+.how-more:hover { text-decoration: underline; text-underline-offset: 3px; }
+.how-more .ico { width: 16px; height: 16px; }
+
+/* ============ YO'NALISHLAR TO'RI (telefonda bosh ko'rinish) ============ */
+.cat-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.cat-card { display: flex; align-items: center; gap: 10px; min-width: 0; padding: 11px 10px; border: var(--bw) solid var(--edge); border-radius: 14px; background: var(--tile); box-shadow: 3px 3px 0 var(--edge); text-align: left; transition: transform .12s, box-shadow .12s; }
+.cat-card:active { transform: translate(3px, 3px); box-shadow: 0 0 0 var(--edge); }
+.cat-card .ri { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; flex: none; color: #000; border: 1.5px solid var(--edge); background: color-mix(in srgb, var(--c) 30%, #fff); }
+.cat-card .ri .ico { width: 18px; height: 18px; }
+.cat-card .cx { min-width: 0; }
+.cat-card .cn { display: block; font-size: 14px; font-weight: 700; line-height: 1.2; }
+.cat-card .cc { display: block; margin-top: 2px; font-size: 12.5px; color: var(--ink-3); }
+.back { display: none; }
+
 /* ============ MOSLASHUVCHAN (MOBIL) ============ */
 @media (max-width: 1180px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 980px) {
   .hero { grid-template-columns: minmax(0, 1fr); gap: 30px; padding-top: 30px; padding-bottom: 44px; }
-  .catalog { grid-template-columns: minmax(0, 1fr); gap: 18px; padding-top: 0; }
+  html { scroll-padding-top: 68px; }
+  .catalog { grid-template-columns: minmax(0, 1fr); gap: 18px; padding-top: 0; border-top: 0; }
+  .home-view .catalog { border-top: var(--bw) solid var(--edge); }
   .rail { position: sticky; top: 68px; z-index: 10; max-height: none; overflow: visible; margin: 0 -24px; padding: 10px 0 6px; background: var(--paper); border-bottom: var(--bw) solid var(--edge); }
   .side { padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
   .side h3, .side .sep { display: none; }
@@ -343,6 +378,44 @@ dialog.sheet.open::backdrop { background: rgba(0, 0, 0, .45); }
   .group-head { flex-wrap: wrap; }
   .group-head p { display: none; }
   .res-head { flex-direction: column; align-items: flex-start; }
+
+  /* Telefon: ortiqcha narsalarsiz, ixcham ko'rinish */
+  .nav-link { display: none; }
+  .hero { padding-bottom: 30px; gap: 24px; }
+  .wall-wrap { padding: 12px 0 6px; border-radius: 18px; box-shadow: 5px 5px 0 var(--edge); }
+  .wl { width: 78px; margin-right: 2px; padding: 8px 4px 6px; gap: 7px; }
+  .wl .logo { width: 48px; height: 48px; border-radius: 14px; box-shadow: 3px 3px 0 var(--edge); }
+  .wl .logo svg { width: 25px; height: 25px; }
+  .wl .logo img { width: 26px; height: 26px; }
+  .wl-n { font-size: 11.5px; }
+  .wall-row:nth-child(n+3) { display: none; }
+  .how { padding-bottom: 34px; }
+  .steps { grid-template-columns: minmax(0, 1fr); border-radius: 16px; }
+  .steps li { padding: 13px 14px; gap: 12px; }
+  .steps li + li { border-left: 0; border-top: var(--bw) solid var(--edge); }
+  .steps .num { width: 30px; height: 30px; font-size: 13.5px; }
+  .steps b { font-size: 15px; margin: 3px 0 2px; }
+  .steps .t { font-size: 13.5px; }
+  html { scroll-padding-top: 64px; }
+  .home-view .rail, .home-view .toolbar { display: none; }
+  .res-head .chip-reset { display: none; }
+  .home-view .catalog { padding-top: 28px; }
+  .back { display: inline-flex; align-items: center; gap: 4px; margin: 2px 0 14px; padding: 6px 13px 6px 8px; font-size: 14px; font-weight: 700; border: var(--bw) solid var(--edge); border-radius: 999px; background: var(--paper); box-shadow: var(--sh-sm); }
+  .back .ico { width: 16px; height: 16px; }
+  .back:active { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--edge); }
+  .res-head { margin-bottom: 18px; }
+  .res-head h2 { font-size: 21px; }
+  .grid { gap: 14px; }
+  .tile { padding: 13px 14px; gap: 9px; border-radius: 14px; }
+  .tile-top { gap: 11px; padding-right: 34px; }
+  .tile .logo { width: 42px; height: 42px; border-radius: 12px; }
+  .tile .logo svg { width: 22px; height: 22px; }
+  .tile .logo img { width: 25px; height: 25px; }
+  .tile-name { font-size: 15.5px; }
+  .tile-desc { font-size: 13.5px; min-height: 0; }
+  .tile-foot { padding-top: 0; border-top: 0; }
+  .fav { top: 9px; right: 9px; }
+  .foot .wrap { gap: 12px 20px; }
   dialog.sheet { margin: auto 0 0 0; width: 100vw; height: auto; max-height: 92dvh; border-left: 0; border-top: 3px solid var(--edge); border-radius: 22px 22px 0 0; transform: translateY(104%); }
   .sheet-in { max-height: 92dvh; padding: 18px 20px 26px; }
   .sheet h2 { font-size: 22px; }
@@ -401,6 +474,7 @@ dialog.sheet.open::backdrop { background: rgba(0, 0, 0, .45); }
       <button class="clear" type="button" data-act="clear" data-i18n-aria="clear"><svg class="ico"><use href="#i-x"/></svg></button>
     </label>
     <div class="top-tools">
+      <a class="nav-link" href="about.html" data-i18n="aboutLink">Sayt haqida</a>
       <button class="icon-btn only-mobile" type="button" data-act="focus-search" data-i18n-aria="searchPh"><svg class="ico"><use href="#i-search"/></svg></button>
       <div class="langs" role="group" aria-label="Til / Язык / Language">
         <button type="button" data-lang="uz">UZ</button>
@@ -418,7 +492,7 @@ dialog.sheet.open::backdrop { background: rgba(0, 0, 0, .45); }
   <section class="wrap hero">
     <div class="hero-copy">
       <h1 data-i18n="heroTitle">Kerakli AI'ni bir zumda toping</h1>
-      <p class="lead" data-i18n="heroText">666 ta AI vosita, 13 ta yo'nalish. Nima qilmoqchi ekaningizni yozing yoki yo'nalishni tanlang.</p>
+      <p class="lead" data-i18n="heroText">AILand — 600+ sun'iy intellekt vositasi jamlangan katalog. Vazifangizni yozing: sizga mos vositalar, ularning narxi va o'zbekcha qisqa tavsifi chiqadi.</p>
       <label class="search" id="heroSearch">
         <svg class="ico"><use href="#i-search"/></svg>
         <input type="search" id="q" autocomplete="off" enterkeyhint="search" data-i18n-ph="searchPhLong">
@@ -430,6 +504,16 @@ dialog.sheet.open::backdrop { background: rgba(0, 0, 0, .45); }
     <div class="wall-wrap">
       <div class="wall" id="wall"></div>
     </div>
+  </section>
+
+  <section class="wrap how" aria-labelledby="howTitle">
+    <h2 class="sr-only" id="howTitle" data-i18n="howTitle">Qanday foydalaniladi</h2>
+    <ol class="steps">
+      <li><span class="num">1</span><div><b data-i18n="s1t"></b><span class="t" data-i18n="s1d"></span></div></li>
+      <li><span class="num">2</span><div><b data-i18n="s2t"></b><span class="t" data-i18n="s2d"></span></div></li>
+      <li><span class="num">3</span><div><b data-i18n="s3t"></b><span class="t" data-i18n="s3d"></span></div></li>
+    </ol>
+    <a class="how-more" href="about.html"><span data-i18n="howMore"></span><svg class="ico"><use href="#i-right"/></svg></a>
   </section>
 
   <section class="wrap catalog" id="catalog">
@@ -444,6 +528,7 @@ dialog.sheet.open::backdrop { background: rgba(0, 0, 0, .45); }
 <footer class="foot">
   <div class="wrap">
     <a class="brand" href="#" data-act="home" aria-label="AILand"><svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="url(#ail-g)"/><path d="M11.5 30.5 20 10l8.5 20.5" fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.6 24.6q2.7-2.3 5.4 0t5.4 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path class="spark" d="M31 4.2Q31.75 8.25 35.8 9Q31.75 9.75 31 13.8Q30.25 9.75 26.2 9Q30.25 8.25 31 4.2Z" fill="#ffc93c"/></svg><span class="wordmark">AILand</span></a>
+    <a class="foot-link" href="about.html" data-i18n="aboutLink">Sayt haqida</a>
     <p data-i18n="footNote"></p>
   </div>
 </footer>
@@ -2057,9 +2142,14 @@ const AI_LOGO_MAP = {"ChatGPT":["RiOpenaiFill","#000000"],"Claude":["SiClaude","
 
   var T = {
     uz: {
-      pageTitle: "AILand — 666 ta AI vosita katalogi",
+      pageTitle: "AILand — 600+ AI vosita katalogi",
       heroTitle: "Kerakli AI'ni bir zumda toping",
-      heroText: "666 ta AI vosita, 13 ta yo'nalish. Nima qilmoqchi ekaningizni yozing yoki yo'nalishni tanlang.",
+      heroText: "AILand — 600+ sun'iy intellekt vositasi jamlangan katalog. Vazifangizni yozing: sizga mos vositalar, ularning narxi va o'zbekcha qisqa tavsifi chiqadi.",
+      howTitle: "Qanday foydalaniladi",
+      s1t: "Vazifani yozing", s1d: "Masalan: rasm fonini o'chirish, taqdimot yoki tarjima.",
+      s2t: "Mos AI'ni tanlang", s2d: "Har bir kartada qisqa tavsif va narxi bor: bepul, freemium yoki pullik.",
+      s3t: "Saytiga o'ting", s3d: "Kartani bosing, batafsil o'qing va bir bosishda vosita saytini oching.",
+      howMore: "AILand haqida batafsil", aboutLink: "Sayt haqida", chooseCat: "Yo'nalishni tanlang", back: "Yo'nalishlar",
       searchPh: "AI yoki vazifa qidirish",
       searchPhLong: "Masalan: rasm fonini o'chirish",
       legend: "Eng mashhur AI'lar. Logotipni bosing va u haqida o'qing.",
@@ -2080,9 +2170,14 @@ const AI_LOGO_MAP = {"ChatGPT":["RiOpenaiFill","#000000"],"Claude":["SiClaude","
       quick: [["Fonni o'chirish", "Fonni o'chirish"], ["Taqdimot", "Taqdimot"], ["Logotip", "Logotip"], ["Subtitr", "Subtitr"], ["Tarjima", "Tarjima"]]
     },
     ru: {
-      pageTitle: "AILand — каталог 666 ИИ-инструментов",
+      pageTitle: "AILand — каталог 600+ ИИ-инструментов",
       heroTitle: "Найдите нужный ИИ за секунду",
-      heroText: "666 ИИ-инструментов в 13 направлениях. Напишите, что хотите сделать, или выберите направление.",
+      heroText: "AILand — каталог из 600+ инструментов искусственного интеллекта. Напишите задачу, и появятся подходящие инструменты, их цена и краткое описание.",
+      howTitle: "Как пользоваться",
+      s1t: "Напишите задачу", s1d: "Например: удалить фон, сделать презентацию или перевести текст.",
+      s2t: "Выберите ИИ", s2d: "На каждой карточке есть краткое описание и цена: бесплатно, freemium или платно.",
+      s3t: "Перейдите на сайт", s3d: "Откройте карточку, прочитайте подробности и перейдите на сайт инструмента.",
+      howMore: "Подробнее об AILand", aboutLink: "О сайте", chooseCat: "Выберите направление", back: "Направления",
       searchPh: "Поиск ИИ или задачи",
       searchPhLong: "Например: удалить фон с фото",
       legend: "Популярные ИИ. Нажмите на логотип, чтобы узнать о нём больше.",
@@ -2103,9 +2198,14 @@ const AI_LOGO_MAP = {"ChatGPT":["RiOpenaiFill","#000000"],"Claude":["SiClaude","
       quick: [["Удалить фон", "Удаление фона"], ["Презентация", "Презентации"], ["Логотип", "Логотип"], ["Субтитры", "Субтитры"], ["Перевод", "Перевод"]]
     },
     en: {
-      pageTitle: "AILand — directory of 666 AI tools",
+      pageTitle: "AILand — directory of 600+ AI tools",
       heroTitle: "Find the right AI in seconds",
-      heroText: "666 AI tools across 13 categories. Type what you want to get done or pick a category.",
+      heroText: "AILand is a directory of 600+ AI tools. Type your task to see matching tools, their pricing and a short description.",
+      howTitle: "How it works",
+      s1t: "Describe your task", s1d: "For example: remove a background, make slides or translate text.",
+      s2t: "Pick a tool", s2d: "Every card shows a short description and the price: free, freemium or paid.",
+      s3t: "Open the website", s3d: "Tap a card to read more, then go to the tool's website in one click.",
+      howMore: "More about AILand", aboutLink: "About", chooseCat: "Pick a category", back: "Categories",
       searchPh: "Search tools or tasks",
       searchPhLong: "For example: remove a photo background",
       legend: "Popular AI tools. Click a logo to read about it.",
@@ -2160,6 +2260,8 @@ const AI_LOGO_MAP = {"ChatGPT":["RiOpenaiFill","#000000"],"Claude":["SiClaude","
     });
   });
   var COUNT = {}; AI_CATEGORIES.forEach(function (c) { COUNT[c.id] = 0; });
+  // Umumiy son aniq emas, yaxlitlab ko'rsatiladi (masalan: 600+)
+  var TOTAL = Math.floor(TOOLS.length / 100) * 100 + '+';
   TOOLS.forEach(function (t) { COUNT[t.cat]++; });
 
   // ================= HOLAT =================
@@ -2244,7 +2346,7 @@ const AI_LOGO_MAP = {"ChatGPT":["RiOpenaiFill","#000000"],"Claude":["SiClaude","
   // ================= YON PANEL =================
   function renderRail() {
     var h = '<nav class="side" aria-label="' + esc(tr('regions')) + '"><h3>' + esc(tr('regions')) + '</h3><div class="regions">';
-    h += regionBtn('all', 'all', tr('all'), TOOLS.length, '#4a5170');
+    h += regionBtn('all', 'all', tr('all'), TOTAL, '#4a5170');
     AI_CATEGORIES.forEach(function (c) { h += regionBtn(c.id, c.id, c.name[state.lang], COUNT[c.id], c.color); });
     h += '<hr class="sep">' + regionBtn('favs', 'heart', tr('favs'), state.favs.length, '#e54666');
     h += '</div></nav>';
@@ -2271,10 +2373,26 @@ const AI_LOGO_MAP = {"ChatGPT":["RiOpenaiFill","#000000"],"Claude":["SiClaude","
   }
 
   // ================= NATIJALAR =================
+  // Telefonda bosh ko'rinish: 13 ta karusel o'rniga ixcham yo'nalishlar to'ri
+  function catGridHTML() {
+    var h = '<div class="res-head"><div><h2>' + esc(tr('chooseCat')) + '</h2></div></div><div class="cat-grid">';
+    AI_CATEGORIES.forEach(function (c) {
+      h += '<button class="cat-card" type="button" data-region="' + c.id + '" data-scroll="1" style="--c:' + c.color + '">' +
+        '<span class="ri"><svg class="ico" aria-hidden="true"><use href="#c-' + c.id + '"/></svg></span>' +
+        '<span class="cx"><span class="cn">' + esc(c.name[state.lang]) + '</span><span class="cc">' + esc(tr('tools')(COUNT[c.id])) + '</span></span></button>';
+    });
+    h += '<button class="cat-card" type="button" data-region="favs" data-scroll="1" style="--c:#e54666">' +
+      '<span class="ri"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></span>' +
+      '<span class="cx"><span class="cn">' + esc(tr('favs')) + '</span><span class="cc">' + esc(tr('tools')(state.favs.length)) + '</span></span></button>';
+    return h + '</div>';
+  }
   function renderResults(animate) {
     var h = '';
-    if (isDefaultView()) {
-      h += '<div class="res-head"><div><h2>' + esc(tr('allTitle')) + '</h2></div><span class="count">' + esc(tr('tools')(TOOLS.length)) + '</span></div>';
+    if (isDefaultView() && MOBILE.matches) {
+      h = catGridHTML();
+      state.navList = filtered().map(function (t) { return t.id; });
+    } else if (isDefaultView()) {
+      h += '<div class="res-head"><div><h2>' + esc(tr('allTitle')) + '</h2></div><span class="count">' + esc(tr('tools')(TOTAL)) + '</span></div>';
       AI_CATEGORIES.forEach(function (c) {
         var list = sorted(TOOLS.filter(function (t) { return t.cat === c.id; })).slice(0, 6);
         h += '<section class="group" style="--c:' + c.color + '"><div class="group-head"><div><h3><span class="sw"></span>' + esc(c.name[state.lang]) + '</h3>' +
@@ -2291,6 +2409,7 @@ const AI_LOGO_MAP = {"ChatGPT":["RiOpenaiFill","#000000"],"Claude":["SiClaude","
       else if (state.region !== 'all') { var c = catOf(state.region); title = c.name[state.lang]; text = AI_CAT_DESC[c.id][li()]; color = c.color; }
       else title = state.q ? tr('found')(list.length, state.q) : tr('filteredAll');
       if (state.q && state.region !== 'all') text = tr('found')(list.length, state.q);
+      h += '<button class="back" type="button" data-act="back">' + icon('left') + esc(tr('back')) + '</button>';
       h += '<div class="res-head"' + (color ? ' style="--c:' + color + '"' : '') + '><div><h2>' + (color ? '<span class="sw"></span>' : '') + esc(title) + '</h2>' +
         (text ? '<p>' + esc(text) + '</p>' : '') + '</div>' +
         '<span class="count">' + (state.q && state.region === 'all' ? '' : esc(tr('tools')(list.length))) +
@@ -2405,6 +2524,7 @@ const AI_LOGO_MAP = {"ChatGPT":["RiOpenaiFill","#000000"],"Claude":["SiClaude","
   // ================= AMALLAR =================
   function update(opts) {
     opts = opts || {};
+    document.body.classList.toggle('home-view', isDefaultView());
     renderRail();
     renderToolbar();
     renderResults(opts.animate);
@@ -2425,7 +2545,7 @@ const AI_LOGO_MAP = {"ChatGPT":["RiOpenaiFill","#000000"],"Claude":["SiClaude","
       var label = $('span', b); if (label) label.textContent = on ? tr('saved') : tr('save');
     });
     var n = $('[data-region="favs"] .n', rail); if (n) n.textContent = state.favs.length;
-    if (state.region === 'favs') renderResults();
+    if (state.region === 'favs' || (isDefaultView() && MOBILE.matches)) renderResults();
   }
   function setLang(l) {
     state.lang = l; store.set('ailand_lang', l);
@@ -2463,6 +2583,9 @@ const AI_LOGO_MAP = {"ChatGPT":["RiOpenaiFill","#000000"],"Claude":["SiClaude","
   // ================= ELEMENTLAR VA HODISALAR =================
   var rail = $('#rail'), toolbar = $('#toolbar'), results = $('#results'), wall = $('#wall'), sheet = $('#sheet'), sheetIn = $('#sheetIn');
   var catalog = $('#catalog'), qMain = $('#q'), qTop = $('#qTop'), topBar = $('#top'), toTop = $('#toTop');
+  var MOBILE = window.matchMedia('(max-width: 640px)');
+  var onMobileChange = function () { update(); };
+  if (MOBILE.addEventListener) MOBILE.addEventListener('change', onMobileChange); else if (MOBILE.addListener) MOBILE.addListener(onMobileChange);
 
   document.addEventListener('click', function (e) {
     var el = e.target.closest('[data-open],[data-fav],[data-region],[data-price],[data-quick],[data-lang],[data-act]');
@@ -2483,6 +2606,7 @@ const AI_LOGO_MAP = {"ChatGPT":["RiOpenaiFill","#000000"],"Claude":["SiClaude","
     if (a === 'home') { e.preventDefault(); closeSheet(); state.region = 'all'; state.price = 'all'; state.sort = 'popular'; setQuery(''); window.scrollTo({ top: 0, behavior: 'smooth' }); }
     else if (a === 'clear') { e.preventDefault(); setQuery(''); el.parentNode.querySelector('input').focus(); }
     else if (a === 'reset') { state.region = 'all'; state.price = 'all'; state.sort = 'popular'; setQuery(''); }
+    else if (a === 'back') { state.region = 'all'; state.price = 'all'; state.sort = 'popular'; setQuery(''); catalog.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     else if (a === 'more') appendMore();
     else if (a === 'theme') setTheme(document.documentElement.dataset.theme !== 'dark');
     else if (a === 'top') window.scrollTo({ top: 0, behavior: 'smooth' });
